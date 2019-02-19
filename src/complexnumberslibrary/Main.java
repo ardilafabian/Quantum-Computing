@@ -9,7 +9,7 @@ package complexnumberslibrary;
  *
  * @author Fabian Ardila
  */
-public class ComplexNumbersLibrary {
+public class Main {
 
     /**
      * @param args the command line arguments
