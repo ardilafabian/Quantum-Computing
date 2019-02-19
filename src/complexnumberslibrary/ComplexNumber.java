@@ -40,19 +40,39 @@ public class ComplexNumber {
         
         String number = "";
         boolean flag = true;
+        boolean iflag  = true;
         
-        if (imaginaryPart == 0) {
+        if (realPart == 0) {
             flag = false;
+            if (imaginaryPart == 0) {
+                iflag = false;
+                number += "0";
+            } else if (iflag && imaginaryPart == -1) {
+                iflag = false;
+                number += "-i";
+            } else if (iflag && imaginaryPart == 1) {
+                iflag = false;
+                number += "i";                
+            } else if (iflag && imaginaryPart > 0) {
+                iflag = false;
+                number += imaginaryPart + "i";
+            } else if (iflag && imaginaryPart < 0) {
+                iflag = false;
+                number += imaginaryPart + "i";
+            }
+        } else if (flag && imaginaryPart == 0) {
+            flag = false;
+            number += realPart;
         } else if (flag && imaginaryPart == 1) {
             flag = false;
-            number += " + i";
+            number += realPart + " + i";
         } else if (flag && imaginaryPart == -1) {
             flag = false;
-            number += " - i";
+            number += realPart + " - i";
         } else if (flag && imaginaryPart > 0) {
-            number += " + " + imaginaryPart + "i";
+            number += realPart + " + " + imaginaryPart + "i";
         } else if (flag && imaginaryPart < 0) {
-            number += " - " + imaginaryPart + "i";
+            number += realPart + " " + imaginaryPart + "i";
         }
         
         return number;

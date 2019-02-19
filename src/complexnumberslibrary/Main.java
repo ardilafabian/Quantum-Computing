@@ -15,7 +15,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        ComplexNumber cp1 = new ComplexNumber(0, 0);
+        
+        System.out.println("Numero complejo: " + cp1);
+        
     }
     
 }
