@@ -18,8 +18,28 @@ public class ComplexVector {
     
     public ComplexVector() {}
     
+    public List<ComplexNumber> getVector() {
+        return vector;
+    }
+    
     public void addComplexNumber(ComplexNumber cn) {
         vector.add(cn);
-    }    
+    }
+
+    @Override
+    public String toString() {
+        
+        String result = "";
+        
+        for (int i = 0; i < vector.size(); i++) {
+            if (i == 0) {
+                result += "[ " + vector.get(i) + " ]";
+            } else {
+                result += "\n[ " + vector.get(i) + " ]";
+            }
+        }
+        
+        return result;
+    }
     
 }

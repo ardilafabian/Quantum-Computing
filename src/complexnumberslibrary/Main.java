@@ -21,6 +21,11 @@ public class Main {
         ComplexNumber cp1;
         ComplexNumber cp2;
         
+        ComplexVector cv1;
+        ComplexVector cv2;
+        
+        /*-------------------------------------------------------------------------*/
+        
         cp1 = new ComplexNumber(3, -1);
         cp2 = new ComplexNumber(1, 4);
         
@@ -58,6 +63,19 @@ public class Main {
         System.out.println("Polar to Cartesian representation: ( 1.414213562 , 0.785398163 )" + 
                             " -> " + op.complexNumberPolarToCartesianRepresentation(1.414213562, 0.785398163) + "\n");
         System.out.println("Phase of c: " + cp1.getPolarRepresentation() + "\n\n");
+        
+        /*-------------------------------------------------------------------------*/
+        
+        cv1 = new ComplexVector();
+        
+        cv1.addComplexNumber(cp1);
+        cv1.addComplexNumber(cp1);
+        cv1.addComplexNumber(cp1);
+        cv1.addComplexNumber(cp1);
+        cv1.addComplexNumber(cp1);
+        
+        System.out.println(cv1);
+        
         
     }
     
