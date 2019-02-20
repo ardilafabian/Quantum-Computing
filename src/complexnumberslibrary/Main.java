@@ -24,6 +24,9 @@ public class Main {
         ComplexVector cv1;
         ComplexVector cv2;
         
+        ComplexNumber scalar;
+        double scalar2;
+        
         /*-------------------------------------------------------------------------*/
         
         cp1 = new ComplexNumber(3, -1);
@@ -82,8 +85,26 @@ public class Main {
         
         System.out.println("--- Test Case 5: ---\n     V  = \n" + cv1 + "\n     W = \n" + cv2 + "\n\n");
         
-        System.out.println("Vector Sum: V + W -> \n" + op.complexVectorSum(cv1, cv2));
+        System.out.println("Vector Sum: V + W -> \n" + op.complexVectorSum(cv1, cv2) + "\n\n");
+        System.out.println("Vector Inverse: -V -> \n" + op.complexVectorInverse(cv1) + "\n\n");
         
+        /*-------------------------------------------------------------------------*/
+        
+        cv1 = new ComplexVector();
+        
+        cv1.addComplexNumber(new ComplexNumber(6, 3));
+        cv1.addComplexNumber(new ComplexNumber(0, 0));
+        cv1.addComplexNumber(new ComplexNumber(5, 1));
+        cv1.addComplexNumber(new ComplexNumber(4, 0));
+        
+        scalar = new ComplexNumber(3, 2);
+        scalar2 = 4;
+        
+        System.out.println("--- Test Case 6: ---\n     Saclar #1 = " + scalar + "\n"
+                            + "     Scalar #2 = " + scalar2 + "\n     V  = \n" + cv1 + "\n\n");
+        
+        System.out.println("Vecor by scalalr #1: c x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar));
+        System.out.println("Vecor by scalalr #2: n x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar2));
         
     }
     

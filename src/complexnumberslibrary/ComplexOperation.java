@@ -123,4 +123,30 @@ public class ComplexOperation {
         
     }
     
+    public ComplexVector complexVectorByScalar(ComplexVector cv, ComplexNumber scalar) {
+        
+        ComplexVector cvResult = new ComplexVector();
+        
+        for (ComplexNumber complexNumber : cv.getVector()) {
+            cvResult.addComplexNumber(this.complexNumberMultiplication(complexNumber, scalar));
+        }
+        
+        return cvResult;
+        
+    }
+    
+    public ComplexVector complexVectorByScalar(ComplexVector cv, double scalar) {
+        
+        ComplexNumber complexScalar = new ComplexNumber(scalar, 0);
+        
+        return this.complexVectorByScalar(cv, complexScalar);
+        
+    }
+    
+    public ComplexVector complexVectorInverse(ComplexVector cv) {
+        
+        return this.complexVectorByScalar(cv, -1);
+        
+    }
+    
 }
