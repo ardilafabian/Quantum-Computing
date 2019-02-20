@@ -106,8 +106,8 @@ public class Main {
         System.out.println("--- Test Case 6: ---\n     Scalar #1 = " + scalar + "\n"
                             + "     Scalar #2 = " + scalar2 + "\n     V  = \n" + cv1 + "\n\n");
         
-        System.out.println("Vecor by scalalr #1: c x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar) + "\n\n");
-        System.out.println("Vecor by scalalr #2: n x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar2) + "\n\n");
+        System.out.println("Vector by scalalr #1: c x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar) + "\n\n");
+        System.out.println("Vector by scalalr #2: n x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar2) + "\n\n");
         
         /*-------------------------------------------------------------------------*/
         
@@ -159,7 +159,9 @@ public class Main {
         cmx2.addComplexEntry(cv1);
         
         System.out.println("--- Test Case 7: ---\n     A = \n" + cmx1 + "\n     B = \n" + cmx2 + "\n\n");
+        
         System.out.println("Sum of matrices: A´+ B -> \n" + op.complexMatrixSum(cmx1, cmx2) + "\n\n");
+        System.out.println("Matrix Inverse: -A ->\n" + op.complexMatrixInverse(cmx1) + "\n\n");
         
     }
     

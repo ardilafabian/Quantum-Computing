@@ -168,4 +168,16 @@ public class ComplexOperation {
         
     }
     
+    public ComplexMatrix complexMatrixInverse(ComplexMatrix cmx) {
+        
+        ComplexMatrix cmxResult = new ComplexMatrix();
+        
+        for (int i = 0; i < cmx.getMatrix().size(); i++) {
+            cmxResult.addComplexEntry(this.complexVectorInverse(cmx.getMatrix().get(i)));
+        }
+        
+        return cmxResult;
+        
+    }
+    
 }
