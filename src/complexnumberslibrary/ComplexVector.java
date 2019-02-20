@@ -42,4 +42,22 @@ public class ComplexVector {
         return result;
     }
     
+    public String toStringForMatrix() {
+        
+        String result = "";
+        
+        for (int i = 0; i < vector.size(); i++) {
+            if (i == 0) {
+                result += "[ " + vector.get(i) + " ";
+            } else if (i == vector.size() - 1){
+                result += " || " + vector.get(i) + " ]";
+            }else {
+                result += " || " + vector.get(i);
+            }
+        }
+        
+        return result;
+        
+    }
+    
 }

@@ -27,6 +27,9 @@ public class Main {
         ComplexNumber scalar;
         double scalar2;
         
+        ComplexMatrix cmx1;
+        ComplexMatrix cmx2;
+        
         /*-------------------------------------------------------------------------*/
         
         cp1 = new ComplexNumber(3, -1);
@@ -103,8 +106,22 @@ public class Main {
         System.out.println("--- Test Case 6: ---\n     Saclar #1 = " + scalar + "\n"
                             + "     Scalar #2 = " + scalar2 + "\n     V  = \n" + cv1 + "\n\n");
         
-        System.out.println("Vecor by scalalr #1: c x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar));
-        System.out.println("Vecor by scalalr #2: n x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar2));
+        System.out.println("Vecor by scalalr #1: c x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar) + "\n\n");
+        System.out.println("Vecor by scalalr #2: n x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar2) + "\n\n");
+        
+        /*-------------------------------------------------------------------------*/
+        
+        cmx1 = new ComplexMatrix();
+        
+        cmx1.addComplexEntry(cv1);
+        cmx1.addComplexEntry(cv2);
+        cmx1.addComplexEntry(cv1);
+        cmx1.addComplexEntry(cv2);
+        cmx1.addComplexEntry(cv1);
+        cmx1.addComplexEntry(cv2);
+        
+        System.out.println("aaaaaaaaaaaaa\n");
+        System.out.println(cmx1);
         
     }
     
