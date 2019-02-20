@@ -180,4 +180,28 @@ public class ComplexOperation {
         
     }
     
+    public ComplexMatrix complexMatrixbyScalar(ComplexMatrix cmx, ComplexNumber cn) {
+        
+        ComplexMatrix cmxResult = new ComplexMatrix();
+        
+        for (int i = 0; i < cmx.getMatrix().size(); i++) {
+            cmxResult.addComplexEntry(this.complexVectorByScalar(cmx.getMatrix().get(i), cn));
+        }
+        
+        return cmxResult;
+        
+    }
+    
+    public ComplexMatrix complexMatrixbyScalar(ComplexMatrix cmx, double cn) {
+        
+        ComplexMatrix cmxResult = new ComplexMatrix();
+        
+        for (int i = 0; i < cmx.getMatrix().size(); i++) {
+            cmxResult.addComplexEntry(this.complexVectorByScalar(cmx.getMatrix().get(i), cn));
+        }
+        
+        return cmxResult;
+        
+    }
+    
 }
