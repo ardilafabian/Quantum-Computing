@@ -94,9 +94,12 @@ public class ComplexOperation {
         
     }
     
-    public String complexNumberPolarToCartesian(double rho, double theta) {
+    public ComplexNumber complexNumberPolarToCartesianRepresentation(double rho, double theta) {
         
-        return null;
+        double rp = rho * Math.cos(theta);
+        double ip = rho * Math.sin(theta);
+        
+        return new ComplexNumber(rp, ip);
         
     }
     
