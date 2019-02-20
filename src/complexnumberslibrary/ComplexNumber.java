@@ -45,6 +45,10 @@ public class ComplexNumber {
         
     }
     
+    public double getPhase() {
+        return Math.atan(imaginaryPart / realPart);
+    }
+    
     @Override
     public String toString() {
         
