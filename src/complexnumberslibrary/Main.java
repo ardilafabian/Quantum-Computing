@@ -68,13 +68,21 @@ public class Main {
         
         cv1 = new ComplexVector();
         
-        cv1.addComplexNumber(cp1);
-        cv1.addComplexNumber(cp1);
-        cv1.addComplexNumber(cp1);
-        cv1.addComplexNumber(cp1);
-        cv1.addComplexNumber(cp1);
+        cv1.addComplexNumber(new ComplexNumber(6, -4));
+        cv1.addComplexNumber(new ComplexNumber(7, 3));
+        cv1.addComplexNumber(new ComplexNumber(4.2, -8.1));
+        cv1.addComplexNumber(new ComplexNumber(0, -3));
         
-        System.out.println(cv1);
+        cv2 = new ComplexVector();
+        
+        cv2.addComplexNumber(new ComplexNumber(16, 2.3));
+        cv2.addComplexNumber(new ComplexNumber(0, -7));
+        cv2.addComplexNumber(new ComplexNumber(6, 0));
+        cv2.addComplexNumber(new ComplexNumber(0, -4));
+        
+        System.out.println("--- Test Case 5: ---\n     V  = \n" + cv1 + "\n     W = \n" + cv2 + "\n\n");
+        
+        System.out.println("Vector Sum: V + W -> \n" + op.complexVectorSum(cv1, cv2));
         
         
     }
