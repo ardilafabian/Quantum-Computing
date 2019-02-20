@@ -18,6 +18,10 @@ public class ComplexMatrix {
     
     public ComplexMatrix() {}
     
+    public List<ComplexVector> getMatrix() {
+        return matrix;
+    }
+    
     public void addComplexEntry(ComplexVector cv) {
         
         matrix.add(cv);

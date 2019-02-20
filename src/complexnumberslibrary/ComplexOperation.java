@@ -149,4 +149,23 @@ public class ComplexOperation {
         
     }
     
+    public ComplexMatrix complexMatrixSum(ComplexMatrix cmx1, ComplexMatrix cmx2) {
+        
+        ComplexMatrix cmxResult = new ComplexMatrix();
+        
+        if ( cmx1.getMatrix().size() != cmx2.getMatrix().size()) {
+            System.err.println("It's not possible to sum vector with different leght.");
+        } else {
+            
+            for (int i = 0; i < cmx1.getMatrix().size(); i++) {
+                cmxResult.addComplexEntry(
+                        this.complexVectorSum(cmx1.getMatrix().get(i), cmx2.getMatrix().get(i)));
+            }
+            
+        }
+        
+        return cmxResult;
+        
+    }
+    
 }

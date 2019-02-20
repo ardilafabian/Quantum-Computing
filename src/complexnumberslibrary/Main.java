@@ -103,7 +103,7 @@ public class Main {
         scalar = new ComplexNumber(3, 2);
         scalar2 = 4;
         
-        System.out.println("--- Test Case 6: ---\n     Saclar #1 = " + scalar + "\n"
+        System.out.println("--- Test Case 6: ---\n     Scalar #1 = " + scalar + "\n"
                             + "     Scalar #2 = " + scalar2 + "\n     V  = \n" + cv1 + "\n\n");
         
         System.out.println("Vecor by scalalr #1: c x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar) + "\n\n");
@@ -112,16 +112,54 @@ public class Main {
         /*-------------------------------------------------------------------------*/
         
         cmx1 = new ComplexMatrix();
+        cmx2 = new ComplexMatrix();
         
+        cv1 = new ComplexVector();
+        cv1.addComplexNumber(new ComplexNumber(6, 3));
+        cv1.addComplexNumber(new ComplexNumber(0, 0));
+        cv1.addComplexNumber(new ComplexNumber(5, 1));
+        cv1.addComplexNumber(new ComplexNumber(4, 0));
         cmx1.addComplexEntry(cv1);
-        cmx1.addComplexEntry(cv2);
-        cmx1.addComplexEntry(cv1);
-        cmx1.addComplexEntry(cv2);
-        cmx1.addComplexEntry(cv1);
-        cmx1.addComplexEntry(cv2);
         
-        System.out.println("aaaaaaaaaaaaa\n");
-        System.out.println(cmx1);
+        cv1 = new ComplexVector();
+        cv1.addComplexNumber(new ComplexNumber(6, -4));
+        cv1.addComplexNumber(new ComplexNumber(7, 3));
+        cv1.addComplexNumber(new ComplexNumber(4.2, -8.1));
+        cv1.addComplexNumber(new ComplexNumber(0, -3));
+        cmx1.addComplexEntry(cv1);
+        
+        cv1 = new ComplexVector();
+        cv1.addComplexNumber(new ComplexNumber(4, -6));
+        cv1.addComplexNumber(new ComplexNumber(9, 1));
+        cv1.addComplexNumber(new ComplexNumber(2.2, -10.1));
+        cv1.addComplexNumber(new ComplexNumber(2, -1));
+        cmx1.addComplexEntry(cv1);
+        
+        //---------
+        
+        cv1 = new ComplexVector();
+        cv1.addComplexNumber(new ComplexNumber(1, 5));
+        cv1.addComplexNumber(new ComplexNumber(3, 7));
+        cv1.addComplexNumber(new ComplexNumber(36, 6));
+        cv1.addComplexNumber(new ComplexNumber(4, 9));
+        cmx2.addComplexEntry(cv1);
+        
+        cv1 = new ComplexVector();
+        cv1.addComplexNumber(new ComplexNumber(2, 10));
+        cv1.addComplexNumber(new ComplexNumber(4, -6));
+        cv1.addComplexNumber(new ComplexNumber(-4.2, 11));
+        cv1.addComplexNumber(new ComplexNumber(7, 3));
+        cmx2.addComplexEntry(cv1);
+        
+        cv1 = new ComplexVector();
+        cv1.addComplexNumber(new ComplexNumber(9, -1));
+        cv1.addComplexNumber(new ComplexNumber(-9, 1));
+        cv1.addComplexNumber(new ComplexNumber(5.3, 4));
+        cv1.addComplexNumber(new ComplexNumber(-2, 3));
+        cmx2.addComplexEntry(cv1);
+        
+        System.out.println("--- Test Case 7: ---\n     A = \n" + cmx1 + "\n     B = \n" + cmx2 + "\n\n");
+        System.out.println("Sum of matrices: A´+ B -> \n" + op.complexMatrixSum(cmx1, cmx2) + "\n\n");
         
     }
     
