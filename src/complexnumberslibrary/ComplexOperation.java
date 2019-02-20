@@ -94,4 +94,10 @@ public class ComplexOperation {
         
     }
     
+    public String complexNumberPolarToCartesian(double rho, double theta) {
+        
+        return null;
+        
+    }
+    
 }

@@ -35,6 +35,16 @@ public class ComplexNumber {
         return imaginaryPart;
     }
     
+    public String getPolarRepresentation() {
+        
+        /* p -> rho */
+        double rho = Math.sqrt( Math.pow(realPart, 2) + Math.pow(imaginaryPart, 2));
+        double theta = Math.atan(imaginaryPart / realPart);
+        
+        return "( +" + rho + ", " + theta + " )";
+        
+    }
+    
     @Override
     public String toString() {
         
