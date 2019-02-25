@@ -204,4 +204,34 @@ public class ComplexOperation {
         
     }
     
+    public ComplexMatrix complexMatrixMultiplication(ComplexMatrix cmx1, ComplexMatrix cmx2) {
+        
+        ComplexMatrix cmxResult = new ComplexMatrix();
+        
+        if (cmx1.getMatrix().get(0).getVector().size() != cmx2.getMatrix().size()) {
+            System.err.println("Matrices length are not equal, it is not possible to multiply.");
+        } else {
+            //TODO
+        }
+        
+        return cmxResult;
+        
+    }
+    
+    public ComplexNumber innerProduct(ComplexVector cv1, ComplexVector cv2) {
+        
+        ComplexNumber result = new ComplexNumber(0, 0);
+        
+        if (cv1.getVector().size() != cv2.getVector().size()) {
+            System.err.println("Vectors length are not equal, it is not possible to gte Inner Product.");
+        } else {
+            for (int i = 0; i < cv1.getVector().size(); i++) {
+                this.complexNumberSum(result, this.complexNumberMultiplication(cv1.getVector().get(i), cv2.getVector().get(i)));
+            }
+        }
+        
+        return result;
+        
+    }
+    
 }
