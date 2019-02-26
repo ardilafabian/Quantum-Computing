@@ -211,7 +211,21 @@ public class ComplexOperation {
         if (cmx1.getMatrix().get(0).getVector().size() != cmx2.getMatrix().size()) {
             System.err.println("Matrices length are not equal, it is not possible to multiply.");
         } else {
-            //TODO
+            for (int i = 0; i < cmx1.getMatrix().size(); i++) {
+                ComplexVector cvEntry = new ComplexVector();
+                for (int k = 0; k < cmx1.getMatrix().get(i).getVector().size(); k++) {
+                    ComplexNumber cn = new ComplexNumber(0, 0);
+                    for (int j = 0; j < cmx1.getMatrix().get(i).getVector().size(); j++) {
+
+                        ComplexNumber cn1 = cmx1.getMatrix().get(i).getVector().get(j);
+                        ComplexNumber cn2 = cmx2.getMatrix().get(j).getVector().get(k);
+
+                        cn = this.complexNumberSum(cn, this.complexNumberMultiplication(cn1, cn2));
+                    }
+                    cvEntry.addComplexNumber(cn);   
+                }
+                cmxResult.addComplexEntry(cvEntry);
+            }
         }
         
         return cmxResult;
