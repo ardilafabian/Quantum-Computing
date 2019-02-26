@@ -180,7 +180,7 @@ public class ComplexOperation {
         
     }
     
-    public ComplexMatrix complexMatrixbyScalar(ComplexMatrix cmx, ComplexNumber cn) {
+    public ComplexMatrix complexMatrixByScalar(ComplexMatrix cmx, ComplexNumber cn) {
         
         ComplexMatrix cmxResult = new ComplexMatrix();
         
@@ -192,7 +192,7 @@ public class ComplexOperation {
         
     }
     
-    public ComplexMatrix complexMatrixbyScalar(ComplexMatrix cmx, double cn) {
+    public ComplexMatrix complexMatrixByScalar(ComplexMatrix cmx, double cn) {
         
         ComplexMatrix cmxResult = new ComplexMatrix();
         

@@ -163,8 +163,8 @@ public class Main {
         
         System.out.println("Sum of matrices: A´+ B -> \n" + op.complexMatrixSum(cmx1, cmx2) + "\n\n");
         System.out.println("Matrix Inverse: -A ->\n" + op.complexMatrixInverse(cmx1) + "\n\n");
-        System.out.println("Matrix by scalar #1: c x A[j,k] ->\n" +op.complexMatrixbyScalar(cmx1, scalar) + "\n\n");
-        System.out.println("Matrix by scalar #2: n x A[j,k] ->\n" +op.complexMatrixbyScalar(cmx1, scalar2) + "\n\n");  
+        System.out.println("Matrix by scalar #1: c x A[j,k] ->\n" +op.complexMatrixByScalar(cmx1, scalar) + "\n\n");
+        System.out.println("Matrix by scalar #2: n x A[j,k] ->\n" +op.complexMatrixByScalar(cmx1, scalar2) + "\n\n");  
         
         /*-------------------------------------------------------------------------*/
         
