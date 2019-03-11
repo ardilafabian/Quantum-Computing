@@ -232,6 +232,8 @@ public class ComplexOperation {
         
     }
     
+    
+    //TODO: verify if is it working
     public ComplexNumber innerProduct(ComplexVector cv1, ComplexVector cv2) {
         
         ComplexNumber result = new ComplexNumber(0, 0);
@@ -245,6 +247,25 @@ public class ComplexOperation {
         }
         
         return result;
+        
+    }
+    
+    //TODO: finish!
+    public ComplexMatrix complexTensorProduct(ComplexMatrix cmx1, ComplexMatrix cmx2) {
+        
+        ComplexMatrix cmxResult = new ComplexMatrix();
+        
+        for (int i = 0; i < cmx1.getMatrix().size(); i++) {
+            for (int j = 0; j < cmx1.getMatrix().get(i).getVector().size(); j++) {
+                for (int k = 0; k < cmx2.getMatrix().size(); k++) {
+                    for (int l = 0; l < cmx2.getMatrix().size(); l++) {
+                        
+                    }
+                }
+            }
+        }
+        
+        return cmxResult;       
         
     }
     
