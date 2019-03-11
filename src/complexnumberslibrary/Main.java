@@ -5,6 +5,9 @@
  */
 package complexnumberslibrary;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Fabian Ardila
@@ -167,7 +170,7 @@ public class Main {
         System.out.println("Matrix by scalar #2: n x A[j,k] ->\n" +op.complexMatrixByScalar(cmx1, scalar2) + "\n\n");  */
         
         /*-------------------------------------------------------------------------*/
-        
+        /*
         cmx1 = new ComplexMatrix();
         cmx2 = new ComplexMatrix();
         
@@ -209,8 +212,11 @@ public class Main {
         
         System.out.println("--- Test Case 8: ---\n     A  = \n" + cmx1 + "\n     B = \n" + cmx2 + "\n\n");
         
-        System.out.println("Matrix Multiplication: A x B ->\n" +op.complexMatrixMultiplication(cmx1, cmx2) + "\n\n");  
-                
+        System.out.println("Matrix Multiplication: A x B ->\n" +op.complexMatrixMultiplication(cmx1, cmx2) + "\n\n");  */
+        
+        List<Boolean> row1 = new ArrayList<>{Boolean(False)};
+        
+        //MarblesExperiment marbles = new MarblesExperiment();        
     }
     
 }
