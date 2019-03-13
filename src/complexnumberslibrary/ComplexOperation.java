@@ -134,6 +134,14 @@ public class ComplexOperation {
 
     }
 
+    public double complexVectorNorm(ComplexVector v) {
+        double res = 0;
+        for (int i = 0; i < v.getVector().size(); i++) {
+            res = res + (v.getVector().get(i).getRealPart() * v.getVector().get(i).getRealPart()) + (v.getVector().get(i).getImaginaryPart()* v.getVector().get(i).getImaginaryPart());
+        }
+        return Math.sqrt(res);
+    }
+
     public ComplexVector complexVectorByScalar(ComplexVector cv, double scalar) {
 
         ComplexNumber complexScalar = new ComplexNumber(scalar, 0);
@@ -235,7 +243,7 @@ public class ComplexOperation {
         if (m.getMatrix().get(0).getVector().size() != v.getVector().size()) {
             throw new Exception("Can not get the action when sizes do not match");
         }
-        
+
         ComplexVector res = new ComplexVector();
         int rows = m.getMatrix().size();
 
@@ -248,7 +256,7 @@ public class ComplexOperation {
         }
         return res;
     }
-    
+
     public ComplexNumber innerProduct(ComplexVector cv1, ComplexVector cv2) {
 
         ComplexNumber result = new ComplexNumber(0, 0);
@@ -260,7 +268,7 @@ public class ComplexOperation {
                 this.complexNumberSum(result, this.complexNumberMultiplication(cv1.getVector().get(i), cv2.getVector().get(i)));
             }
         }
-        
+
         return result;
 
     }
