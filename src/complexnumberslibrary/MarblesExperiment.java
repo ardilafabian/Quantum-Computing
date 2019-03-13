@@ -15,18 +15,24 @@ import java.util.List;
 public class MarblesExperiment {
     
     ComplexMatrix adjacencyMatrix;
-    ComplexVector currentSate;
+    ComplexVector currentState;
     int clicks;
+    ComplexOperation operation;
     
     public MarblesExperiment(ComplexMatrix adjacencyMatrix, ComplexVector currentSate, int clicks) {
+        operation = new ComplexOperation();
         this.adjacencyMatrix = adjacencyMatrix;
-        this.currentSate = currentSate;
+        this.currentState = currentSate;
         this.clicks = clicks;
     }
     
-    public ComplexVector getNewState() {
-        
-        return null;
+    public ComplexVector getNewState() throws Exception {
+        if (adjacencyMatrix.getMatrix().size() != adjacencyMatrix.getMatrix().get(0).getVector().size()) throw new Exception("Size Does not match!");
+        for (int i = 0; i < clicks; i++) {
+            ComplexVector res = operation.action(adjacencyMatrix, currentState);
+            currentState = res;
+        }
+        return currentState;
     }
 
     public ComplexMatrix getAdjacencyMatrix() {
@@ -37,12 +43,12 @@ public class MarblesExperiment {
         this.adjacencyMatrix = adjacencyMatrix;
     }
 
-    public ComplexVector getCurrentSate() {
-        return currentSate;
+    public ComplexVector getCurrentState() {
+        return currentState;
     }
 
-    public void setCurrentSate(ComplexVector currentSate) {
-        this.currentSate = currentSate;
+    public void setCurrentState(ComplexVector currentState) {
+        this.currentState = currentState;
     }
 
     public int getClicks() {

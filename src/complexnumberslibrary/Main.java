@@ -17,7 +17,7 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
         ComplexOperation op = new ComplexOperation();
         
@@ -214,9 +214,35 @@ public class Main {
         
         System.out.println("Matrix Multiplication: A x B ->\n" +op.complexMatrixMultiplication(cmx1, cmx2) + "\n\n");  */
         
-        List<Boolean> row1 = new ArrayList<>{Boolean(False)};
+        cmx1 = new ComplexMatrix();
         
-        //MarblesExperiment marbles = new MarblesExperiment();        
+        cv1 = new ComplexVector();
+        cv1.addComplexNumber(new ComplexNumber(0.7071, 0));
+        cv1.addComplexNumber(new ComplexNumber(0.7071, 0));
+        cv1.addComplexNumber(new ComplexNumber(0, 0));
+        cmx1.addComplexEntry(cv1);
+        
+        cv1 = new ComplexVector();
+        cv1.addComplexNumber(new ComplexNumber(-0.7071, 0));
+        cv1.addComplexNumber(new ComplexNumber(-0.7071, 0));
+        cv1.addComplexNumber(new ComplexNumber(0, 0));
+        cmx1.addComplexEntry(cv1);
+        
+        cv1 = new ComplexVector();
+        cv1.addComplexNumber(new ComplexNumber(0, 0));
+        cv1.addComplexNumber(new ComplexNumber(0, 0));
+        cv1.addComplexNumber(new ComplexNumber(0, 1));
+        cmx1.addComplexEntry(cv1);
+        
+        cv1 = new ComplexVector();
+        cv1.addComplexNumber(new ComplexNumber(0.5774, 0));
+        cv1.addComplexNumber(new ComplexNumber(0, 5164));
+        cv1.addComplexNumber(new ComplexNumber(0, 0.6325));
+        
+        MarblesExperiment marbles = new MarblesExperiment(cmx1, cv1, 1);
+        
+        System.out.println(marbles.getNewState());
+        //System.out.println(op.complexNumberMultiplication(new ComplexNumber(0, 1), new ComplexNumber(0, 0.6325)));
     }
     
 }
