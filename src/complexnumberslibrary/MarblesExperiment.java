@@ -14,49 +14,47 @@ import java.util.List;
  */
 public class MarblesExperiment {
     
-    ComplexMatrix adjacencyMatrix;
-    ComplexVector currentState;
-    int clicks;
-    ComplexOperation operation;
+    static ComplexMatrix adjacencyMatrix;
+    static ComplexVector currentState;
+    static int clicks;
     
     public MarblesExperiment(ComplexMatrix adjacencyMatrix, ComplexVector currentSate, int clicks) {
-        operation = new ComplexOperation();
         this.adjacencyMatrix = adjacencyMatrix;
         this.currentState = currentSate;
         this.clicks = clicks;
     }
     
-    public ComplexVector getNewState() throws Exception {
+    public static ComplexVector getNewState() throws Exception {
         if (adjacencyMatrix.getMatrix().size() != adjacencyMatrix.getMatrix().get(0).getVector().size()) throw new Exception("Size Does not match!");
         for (int i = 0; i < clicks; i++) {
-            ComplexVector res = operation.action(adjacencyMatrix, currentState);
+            ComplexVector res = ComplexOperation.action(adjacencyMatrix, currentState);
             currentState = res;
         }
         return currentState;
     }
 
-    public ComplexMatrix getAdjacencyMatrix() {
+    public static ComplexMatrix getAdjacencyMatrix() {
         return adjacencyMatrix;
     }
 
-    public void setAdjacencyMatrix(ComplexMatrix adjacencyMatrix) {
-        this.adjacencyMatrix = adjacencyMatrix;
+    public static void setAdjacencyMatrix(ComplexMatrix adjacencyMatrix) {
+        MarblesExperiment.adjacencyMatrix = adjacencyMatrix;
     }
 
-    public ComplexVector getCurrentState() {
+    public static ComplexVector getCurrentState() {
         return currentState;
     }
 
-    public void setCurrentState(ComplexVector currentState) {
-        this.currentState = currentState;
+    public static void setCurrentState(ComplexVector currentState) {
+        MarblesExperiment.currentState = currentState;
     }
 
-    public int getClicks() {
+    public static int getClicks() {
         return clicks;
     }
 
-    public void setClicks(int clicks) {
-        this.clicks = clicks;
+    public static void setClicks(int clicks) {
+        MarblesExperiment.clicks = clicks;
     }
     
 }
