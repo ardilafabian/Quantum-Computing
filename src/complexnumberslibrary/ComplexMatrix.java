@@ -46,4 +46,18 @@ public class ComplexMatrix {
         return result;
     }
     
+    public boolean equals(ComplexMatrix m) {
+        boolean confirmation = true;
+        int len = m.getMatrix().size();
+        
+        for (int i = 0; i < len; i++) {
+            if (!matrix.get(i).equals(m.getMatrix().get(i))){
+                confirmation = false;
+                i = len;
+            }
+        }
+        
+        return confirmation;
+    }
+    
 }

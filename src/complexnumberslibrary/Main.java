@@ -96,7 +96,7 @@ public class Main {
         
         /*-------------------------------------------------------------------------*/
         
-        cv1 = new ComplexVector();
+        /*cv1 = new ComplexVector();
         
         cv1.addComplexNumber(new ComplexNumber(6, 3));
         cv1.addComplexNumber(new ComplexNumber(0, 0));
@@ -110,11 +110,11 @@ public class Main {
                             + "     Scalar #2 = " + scalar2 + "\n     V  = \n" + cv1 + "\n\n");
         
         System.out.println("Vector by scalar #1: c x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar) + "\n\n");
-        System.out.println("Vector by scalar #2: n x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar2) + "\n\n");
+        System.out.println("Vector by scalar #2: n x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar2) + "\n\n");*/
         
         /*-------------------------------------------------------------------------*/
         
-        /*cmx1 = new ComplexMatrix();
+        cmx1 = new ComplexMatrix();
         cmx2 = new ComplexMatrix();
         
         cv1 = new ComplexVector();
@@ -161,13 +161,13 @@ public class Main {
         cv1.addComplexNumber(new ComplexNumber(-2, 3));
         cmx2.addComplexEntry(cv1);
         
-        System.out.println("--- Test Case 7: ---\n     Scalar #1 = " + scalar + "\n"
-                            + "     Scalar #2 = " + scalar2 + "\n   A = \n" + cmx1 + "\n     B = \n" + cmx2 + "\n\n");
+        //System.out.println("--- Test Case 7: ---\n     Scalar #1 = " + scalar + "\n"
+        //                    + "     Scalar #2 = " + scalar2 + "\n   A = \n" + cmx1 + "\n     B = \n" + cmx2 + "\n\n");
         
         System.out.println("Sum of matrices: A´+ B -> \n" + op.complexMatrixSum(cmx1, cmx2) + "\n\n");
         System.out.println("Matrix Inverse: -A ->\n" + op.complexMatrixInverse(cmx1) + "\n\n");
         System.out.println("Matrix by scalar #1: c x A[j,k] ->\n" +op.complexMatrixByScalar(cmx1, scalar) + "\n\n");
-        System.out.println("Matrix by scalar #2: n x A[j,k] ->\n" +op.complexMatrixByScalar(cmx1, scalar2) + "\n\n");  */
+        System.out.println("Matrix by scalar #2: n x A[j,k] ->\n" +op.complexMatrixByScalar(cmx1, scalar2) + "\n\n");  
         
         /*-------------------------------------------------------------------------*/
         /*
