@@ -17,9 +17,9 @@ import static org.junit.Assert.*;
  *
  * @author Fabian Ardila
  */
-public class ComplexExperimentsSimulations {
+public class ComplexMarblesSimulation {
     
-    public ComplexExperimentsSimulations() {
+    public ComplexMarblesSimulation() {
     }
     
     @BeforeClass
@@ -27,17 +27,11 @@ public class ComplexExperimentsSimulations {
     }
 
     @Test
-    public void ComplexMarblesSimulation() {
+    public void ComplexMarblesSimulation() throws Exception {
         ComplexVector cv1;
-        ComplexVector cv2;
+        ComplexVector expected;
         
         ComplexMatrix cmx1;
-        ComplexMatrix cmx2;
-        ComplexMatrix expected;
-        
-        cmx1 = new ComplexMatrix();
-        cmx2 = new ComplexMatrix();
-        expected = new ComplexMatrix();
         
         cmx1 = new ComplexMatrix();
         
@@ -64,6 +58,15 @@ public class ComplexExperimentsSimulations {
         cv1.addComplexNumber(new ComplexNumber(0, 5164));
         cv1.addComplexNumber(new ComplexNumber(0, 0.6325));
         
+        expected = new ComplexVector();
+        expected.addComplexNumber(new ComplexNumber(0.41, 3651.46));
+        expected.addComplexNumber(new ComplexNumber(-0.41, -3651.46));
+        expected.addComplexNumber(new ComplexNumber(-0.63, 0));
+        
         MarblesExperiment marbles = new MarblesExperiment(cmx1, cv1, 1);
+        
+        ComplexVector res = MarblesExperiment.getNewState();
+        
+        assertTrue("ComplexMarblesSimulation failed.", res.equals(expected));
     }
 }

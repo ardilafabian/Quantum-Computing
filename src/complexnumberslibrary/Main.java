@@ -105,7 +105,7 @@ public class Main {
         
         MarblesExperiment marbles = new MarblesExperiment(cmx1, cv1, 1);
         
-        //System.out.println(marbles.getNewState());
+        System.out.println(marbles.getNewState());
         //System.out.println(op.complexNumberMultiplication(new ComplexNumber(0, 1), new ComplexNumber(0, 0.6325)));
     }
     
