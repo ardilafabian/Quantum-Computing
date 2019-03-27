@@ -16,7 +16,7 @@ package complexnumberslibrary;
  */
 public class ComplexOperation {
 
-    public ComplexNumber complexNumberSum(ComplexNumber cn1, ComplexNumber cn2) {
+    public static ComplexNumber complexNumberSum(ComplexNumber cn1, ComplexNumber cn2) {
 
         double rp1 = cn1.getRealPart();
         double ip1 = cn1.getImaginaryPart();
@@ -24,14 +24,14 @@ public class ComplexOperation {
         double rp2 = cn2.getRealPart();
         double ip2 = cn2.getImaginaryPart();
 
-        double resultRp = rp1 + rp2;
-        double resultIp = ip1 + ip2;
+        double resultRp = (double)Math.round((rp1 + rp2) * 100d) / 100d;
+        double resultIp = (double)Math.round((ip1 + ip2) * 100d) / 100d;
 
         return new ComplexNumber(resultRp, resultIp);
 
     }
 
-    public ComplexNumber complexNumberMultiplication(ComplexNumber cn1, ComplexNumber cn2) {
+    public static ComplexNumber complexNumberMultiplication(ComplexNumber cn1, ComplexNumber cn2) {
 
         double rp1 = cn1.getRealPart();
         double ip1 = cn1.getImaginaryPart();
@@ -46,7 +46,7 @@ public class ComplexOperation {
 
     }
 
-    public ComplexNumber complexNumberRest(ComplexNumber cn1, ComplexNumber cn2) {
+    public static ComplexNumber complexNumberRest(ComplexNumber cn1, ComplexNumber cn2) {
 
         double rp1 = cn1.getRealPart();
         double ip1 = cn1.getImaginaryPart();
@@ -60,7 +60,7 @@ public class ComplexOperation {
         return new ComplexNumber(resultRp, resultIp);
     }
 
-    public ComplexNumber complexNumberDivision(ComplexNumber cn1, ComplexNumber cn2) {
+    public static ComplexNumber complexNumberDivision(ComplexNumber cn1, ComplexNumber cn2) {
 
         double rp1 = cn1.getRealPart();
         double ip1 = cn1.getImaginaryPart();
@@ -75,7 +75,7 @@ public class ComplexOperation {
 
     }
 
-    public double complexNumberModulus(ComplexNumber cn) {
+    public static double complexNumberModulus(ComplexNumber cn) {
 
         double rp = cn.getRealPart();
         double ip = cn.getImaginaryPart();
@@ -84,7 +84,7 @@ public class ComplexOperation {
 
     }
 
-    public ComplexNumber complexNumberConjugation(ComplexNumber cn) {
+    public static ComplexNumber complexNumberConjugation(ComplexNumber cn) {
 
         double rp = cn.getRealPart();
         double ip = cn.getImaginaryPart();
@@ -93,7 +93,7 @@ public class ComplexOperation {
 
     }
 
-    public ComplexNumber complexNumberPolarToCartesianRepresentation(double rho, double theta) {
+    public static ComplexNumber complexNumberPolarToCartesianRepresentation(double rho, double theta) {
 
         double rp = rho * Math.cos(theta);
         double ip = rho * Math.sin(theta);
@@ -102,7 +102,7 @@ public class ComplexOperation {
 
     }
 
-    public ComplexVector complexVectorSum(ComplexVector cv1, ComplexVector cv2) {
+    public static ComplexVector complexVectorSum(ComplexVector cv1, ComplexVector cv2) {
 
         ComplexVector cvResult = new ComplexVector();
         ComplexNumber cn1;
@@ -114,7 +114,7 @@ public class ComplexOperation {
             for (int i = 0; i < cv1.getVector().size(); i++) {
                 cn1 = cv1.getVector().get(i);
                 cn2 = cv2.getVector().get(i);
-                cvResult.addComplexNumber(this.complexNumberSum(cn1, cn2));
+                cvResult.addComplexNumber(ComplexOperation.complexNumberSum(cn1, cn2));
             }
         }
 
@@ -122,19 +122,19 @@ public class ComplexOperation {
 
     }
 
-    public ComplexVector complexVectorByScalar(ComplexVector cv, ComplexNumber scalar) {
+    public static ComplexVector complexVectorByScalar(ComplexVector cv, ComplexNumber scalar) {
 
         ComplexVector cvResult = new ComplexVector();
 
         for (ComplexNumber complexNumber : cv.getVector()) {
-            cvResult.addComplexNumber(this.complexNumberMultiplication(complexNumber, scalar));
+            cvResult.addComplexNumber(ComplexOperation.complexNumberMultiplication(complexNumber, scalar));
         }
 
         return cvResult;
 
     }
 
-    public double complexVectorNorm(ComplexVector v) {
+    public static double complexVectorNorm(ComplexVector v) {
         double res = 0;
         for (int i = 0; i < v.getVector().size(); i++) {
             res = res + (v.getVector().get(i).getRealPart() * v.getVector().get(i).getRealPart()) + (v.getVector().get(i).getImaginaryPart()* v.getVector().get(i).getImaginaryPart());
@@ -142,21 +142,21 @@ public class ComplexOperation {
         return Math.sqrt(res);
     }
 
-    public ComplexVector complexVectorByScalar(ComplexVector cv, double scalar) {
+    public static ComplexVector complexVectorByScalar(ComplexVector cv, double scalar) {
 
         ComplexNumber complexScalar = new ComplexNumber(scalar, 0);
 
-        return this.complexVectorByScalar(cv, complexScalar);
+        return ComplexOperation.complexVectorByScalar(cv, complexScalar);
 
     }
 
-    public ComplexVector complexVectorInverse(ComplexVector cv) {
+    public static ComplexVector complexVectorInverse(ComplexVector cv) {
 
-        return this.complexVectorByScalar(cv, -1);
+        return ComplexOperation.complexVectorByScalar(cv, -1);
 
     }
 
-    public ComplexMatrix complexMatrixSum(ComplexMatrix cmx1, ComplexMatrix cmx2) {
+    public static ComplexMatrix complexMatrixSum(ComplexMatrix cmx1, ComplexMatrix cmx2) {
 
         ComplexMatrix cmxResult = new ComplexMatrix();
 
@@ -166,7 +166,7 @@ public class ComplexOperation {
 
             for (int i = 0; i < cmx1.getMatrix().size(); i++) {
                 cmxResult.addComplexEntry(
-                        this.complexVectorSum(cmx1.getMatrix().get(i), cmx2.getMatrix().get(i)));
+                        ComplexOperation.complexVectorSum(cmx1.getMatrix().get(i), cmx2.getMatrix().get(i)));
             }
 
         }
@@ -175,43 +175,43 @@ public class ComplexOperation {
 
     }
 
-    public ComplexMatrix complexMatrixInverse(ComplexMatrix cmx) {
+    public static ComplexMatrix complexMatrixInverse(ComplexMatrix cmx) {
 
         ComplexMatrix cmxResult = new ComplexMatrix();
 
         for (int i = 0; i < cmx.getMatrix().size(); i++) {
-            cmxResult.addComplexEntry(this.complexVectorInverse(cmx.getMatrix().get(i)));
+            cmxResult.addComplexEntry(ComplexOperation.complexVectorInverse(cmx.getMatrix().get(i)));
         }
 
         return cmxResult;
 
     }
 
-    public ComplexMatrix complexMatrixByScalar(ComplexMatrix cmx, ComplexNumber cn) {
+    public static ComplexMatrix complexMatrixByScalar(ComplexMatrix cmx, ComplexNumber cn) {
 
         ComplexMatrix cmxResult = new ComplexMatrix();
 
         for (int i = 0; i < cmx.getMatrix().size(); i++) {
-            cmxResult.addComplexEntry(this.complexVectorByScalar(cmx.getMatrix().get(i), cn));
+            cmxResult.addComplexEntry(ComplexOperation.complexVectorByScalar(cmx.getMatrix().get(i), cn));
         }
 
         return cmxResult;
 
     }
 
-    public ComplexMatrix complexMatrixByScalar(ComplexMatrix cmx, double cn) {
+    public static ComplexMatrix complexMatrixByScalar(ComplexMatrix cmx, double cn) {
 
         ComplexMatrix cmxResult = new ComplexMatrix();
 
         for (int i = 0; i < cmx.getMatrix().size(); i++) {
-            cmxResult.addComplexEntry(this.complexVectorByScalar(cmx.getMatrix().get(i), cn));
+            cmxResult.addComplexEntry(ComplexOperation.complexVectorByScalar(cmx.getMatrix().get(i), cn));
         }
 
         return cmxResult;
 
     }
 
-    public ComplexMatrix complexMatrixMultiplication(ComplexMatrix cmx1, ComplexMatrix cmx2) {
+    public static ComplexMatrix complexMatrixMultiplication(ComplexMatrix cmx1, ComplexMatrix cmx2) {
 
         ComplexMatrix cmxResult = new ComplexMatrix();
 
@@ -227,7 +227,7 @@ public class ComplexOperation {
                         ComplexNumber cn1 = cmx1.getMatrix().get(i).getVector().get(j);
                         ComplexNumber cn2 = cmx2.getMatrix().get(j).getVector().get(k);
 
-                        cn = this.complexNumberSum(cn, this.complexNumberMultiplication(cn1, cn2));
+                        cn = ComplexOperation.complexNumberSum(cn, ComplexOperation.complexNumberMultiplication(cn1, cn2));
                     }
                     cvEntry.addComplexNumber(cn);
                 }
@@ -239,7 +239,7 @@ public class ComplexOperation {
 
     }
 
-    public ComplexVector action(ComplexMatrix m, ComplexVector v) throws Exception {
+    public static ComplexVector action(ComplexMatrix m, ComplexVector v) throws Exception {
         if (m.getMatrix().get(0).getVector().size() != v.getVector().size()) {
             throw new Exception("Can not get the action when sizes do not match");
         }
@@ -257,7 +257,7 @@ public class ComplexOperation {
         return res;
     }
 
-    public ComplexNumber innerProduct(ComplexVector cv1, ComplexVector cv2) {
+    public static ComplexNumber innerProduct(ComplexVector cv1, ComplexVector cv2) {
 
         ComplexNumber result = new ComplexNumber(0, 0);
 
@@ -265,7 +265,7 @@ public class ComplexOperation {
             System.err.println("Vectors length are not equal, it is not possible to gte Inner Product.");
         } else {
             for (int i = 0; i < cv1.getVector().size(); i++) {
-                this.complexNumberSum(result, this.complexNumberMultiplication(cv1.getVector().get(i), cv2.getVector().get(i)));
+                ComplexOperation.complexNumberSum(result, ComplexOperation.complexNumberMultiplication(cv1.getVector().get(i), cv2.getVector().get(i)));
             }
         }
 
@@ -274,7 +274,7 @@ public class ComplexOperation {
     }
 
     //TODO: finish!
-    public ComplexMatrix complexTensorProduct(ComplexMatrix cmx1, ComplexMatrix cmx2) {
+    public static ComplexMatrix complexTensorProduct(ComplexMatrix cmx1, ComplexMatrix cmx2) {
 
         ComplexMatrix cmxResult = new ComplexMatrix();
 

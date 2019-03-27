@@ -91,4 +91,8 @@ public class ComplexNumber {
         
         return number;
     }
+    
+    public boolean equals(ComplexNumber c){
+        return realPart == c.getRealPart() && imaginaryPart == c.getImaginaryPart();
+    }
 }

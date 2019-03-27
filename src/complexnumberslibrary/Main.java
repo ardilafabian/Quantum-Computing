@@ -74,8 +74,8 @@ public class Main {
         System.out.println("Phase of c: " + cp1.getPolarRepresentation() + "\n\n");*/
         
         /*-------------------------------------------------------------------------*/
-        
-        /*cv1 = new ComplexVector();
+        /*
+        cv1 = new ComplexVector();
         
         cv1.addComplexNumber(new ComplexNumber(6, -4));
         cv1.addComplexNumber(new ComplexNumber(7, 3));
@@ -96,7 +96,7 @@ public class Main {
         
         /*-------------------------------------------------------------------------*/
         
-        /*cv1 = new ComplexVector();
+        cv1 = new ComplexVector();
         
         cv1.addComplexNumber(new ComplexNumber(6, 3));
         cv1.addComplexNumber(new ComplexNumber(0, 0));
@@ -110,7 +110,7 @@ public class Main {
                             + "     Scalar #2 = " + scalar2 + "\n     V  = \n" + cv1 + "\n\n");
         
         System.out.println("Vector by scalar #1: c x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar) + "\n\n");
-        System.out.println("Vector by scalar #2: n x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar2) + "\n\n");*/
+        System.out.println("Vector by scalar #2: n x V[j] ->\n" +op.complexVectorByScalar(cv1, scalar2) + "\n\n");
         
         /*-------------------------------------------------------------------------*/
         
@@ -241,7 +241,7 @@ public class Main {
         
         MarblesExperiment marbles = new MarblesExperiment(cmx1, cv1, 1);
         
-        System.out.println(marbles.getNewState());
+        //System.out.println(marbles.getNewState());
         //System.out.println(op.complexNumberMultiplication(new ComplexNumber(0, 1), new ComplexNumber(0, 0.6325)));
     }
     

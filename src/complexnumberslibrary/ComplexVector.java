@@ -60,4 +60,21 @@ public class ComplexVector {
         
     }
     
+    public boolean equals(ComplexVector cv){
+        boolean confirmation = true;
+        int len = vector.size();
+        
+        for (int i = 0; i < len; i++) {
+            if(!vector.get(i).equals(cv.getVector().get(i))) {
+                //System.err.println(vector.get(i));
+                confirmation = false;
+                i = len;
+            }
+        }
+        
+        return confirmation;
+    }
+    
+    
+    
 }
