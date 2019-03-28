@@ -17,9 +17,9 @@ import static org.junit.Assert.*;
  *
  * @author Fabian Ardila
  */
-public class ComplexMarblesSimulation {
+public class ComplexMarblesTest {
     
-    public ComplexMarblesSimulation() {
+    public ComplexMarblesTest() {
     }
     
     @BeforeClass

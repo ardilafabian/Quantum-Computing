@@ -11,24 +11,20 @@ package complexnumberslibrary;
  */
 public class QuantumSystemParticleInLine {
     
-    ComplexOperation operation;
-    
-    public QuantumSystemParticleInLine() {
-        operation = new ComplexOperation();
-    }
+    public QuantumSystemParticleInLine() {}
     
     public double particleLikelihoodAtPoint(ComplexVector v, int pnt) {
-        double norm = operation.complexVectorNorm(v);
-        double modulus = operation.complexNumberModulus(v.getVector().get(pnt));
+        double norm = ComplexOperation.complexVectorNorm(v);
+        double modulus = ComplexOperation.complexNumberModulus(v.getVector().get(pnt));
         
         return Math.pow(modulus, 2) / Math.pow(norm, 2);
     }
     
     public ComplexNumber amplitudeOfTransition(ComplexVector v1, ComplexVector v2) {
-        ComplexNumber innerProduct = operation.innerProduct(v1, v2);
+        ComplexNumber innerProduct = ComplexOperation.innerProduct(v1, v2);
         
-        double normVector1 = operation.complexVectorNorm(v1);
-        double normVector2 = operation.complexVectorNorm(v2);
+        double normVector1 = ComplexOperation.complexVectorNorm(v1);
+        double normVector2 = ComplexOperation.complexVectorNorm(v2);
         
         double divider = normVector1*normVector2;
         
