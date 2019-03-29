@@ -41,10 +41,7 @@ public class ComplexOperation {
 
         double resultRp = 0;
         double resultIp = 0;
-        if (rp1 != 0 && rp2!=0 && ip1!=0 && ip2!=0) {
-            resultRp = (rp1 * rp2) - (ip1 * ip2);
-            resultIp = (rp1 * ip2) + (rp2 * ip1);
-        } else if (rp1==0 && rp2==0 && ip1!=0 && ip2!=0) {
+        if (rp1==0 && rp2==0 && ip1!=0 && ip2!=0) {
             resultRp = -1 * ip1 * ip2;
         } else if (rp1!=0 && rp2!=0 && ip1==0 && ip2==0) {
             resultRp = rp1 * rp2;
@@ -52,6 +49,9 @@ public class ComplexOperation {
             resultIp = rp1 * ip2;
         } else if (rp1==0 && rp2!=0 && ip1!=0 && ip2==0) {
             resultIp = rp2 * ip1;
+        } else {
+            resultRp = (rp1 * rp2) - (ip1 * ip2);
+            resultIp = (rp1 * ip2) + (rp2 * ip1);
         }
         
         ComplexNumber res = new ComplexNumber(resultRp, resultIp);

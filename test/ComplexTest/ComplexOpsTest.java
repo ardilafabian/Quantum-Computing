@@ -194,7 +194,8 @@ public class ComplexOpsTest {
         
         ComplexVector res = ComplexOperation.complexVectorByScalar(cv1, scalar);
         
-        //System.err.println(res);
+        System.err.println("Res:\n"+res);
+        System.err.println("Expected:\n"+expected);
         
         assertEquals("complexVectorByComplexScalarTest failed.", true, res.equals(expected));
     }
