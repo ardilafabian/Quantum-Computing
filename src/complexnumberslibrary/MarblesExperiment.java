@@ -24,12 +24,26 @@ public class MarblesExperiment {
         MarblesExperiment.clicks = clicks;
     }
     
+    public MarblesExperiment(ComplexVector currentSate) {
+        MarblesExperiment.adjacencyMatrix = adjacencyMatrix;
+        MarblesExperiment.currentState = currentSate;
+    }
+    
     public static ComplexVector getNewState() throws Exception {
         if (adjacencyMatrix.getMatrix().size() != adjacencyMatrix.getMatrix().get(0).getVector().size()) throw new Exception("Size Does not match!");
         for (int i = 0; i < clicks; i++) {
             ComplexVector res = ComplexOperation.action(adjacencyMatrix, currentState);
             currentState = res;
         }
+        return currentState;
+    }
+    
+    public static ComplexVector dynamicSimulation(ArrayList<ComplexMatrix> matrixes) throws Exception {
+        for (int i = 0; i < matrixes.size(); i++) {
+            ComplexMatrix m = matrixes.get(i);
+            currentState = ComplexOperation.action(m, currentState);
+        }
+        
         return currentState;
     }
 
