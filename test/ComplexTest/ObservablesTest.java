@@ -41,8 +41,31 @@ public class ObservablesTest {
         observable.addComplexEntry(v1);
 //        System.err.println("KET ->>> \n" + ket);
 //        System.err.println("Observable ->>> \n" + observable);
-        ComplexNumber res = Observable.ObservableAverage(ket, observable);
+        ComplexNumber res = Observable.observableAverage(ket, observable);
         
         assertEquals("ObservableAverageTest failed.", true, res.equals(new ComplexNumber(2.5, 0)));
+    }
+    
+    @Test
+    public void ObservableVarianceTest() throws Exception {
+        ComplexVector ket = new ComplexVector();
+        ComplexMatrix observable = new ComplexMatrix();
+        ComplexVector v1 = new ComplexVector();
+        
+        ket.addComplexNumber(new ComplexNumber(0.707106781, 0));
+        ket.addComplexNumber(new ComplexNumber(0, 0.707106781));
+        
+        v1.addComplexNumber(new ComplexNumber(1, 0));
+        v1.addComplexNumber(new ComplexNumber(0, -1));
+        observable.addComplexEntry(v1);
+        
+        v1 = new ComplexVector();
+        v1.addComplexNumber(new ComplexNumber(0, 1));
+        v1.addComplexNumber(new ComplexNumber(2, 0));
+        observable.addComplexEntry(v1);
+
+        ComplexNumber res = Observable.observableVariance(ket, observable);
+        
+        assertEquals("ObservableAverageTest failed.", true, res.equals(new ComplexNumber(0.26, 0)));
     }
 }

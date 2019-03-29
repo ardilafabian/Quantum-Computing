@@ -11,17 +11,48 @@ package complexnumberslibrary;
  */
 public class Observable {
     
-    public static ComplexNumber ObservableAverage(ComplexVector ket, ComplexMatrix observable) throws Exception {
-        ComplexVector temp = ComplexOperation.action(observable, ket);
+    private static ComplexMatrix buildIdentity(ComplexNumber avg, int len) {
+        ComplexMatrix res = new ComplexMatrix();
+        ComplexVector cv;
+        ComplexNumber cn;
         
-//        System.err.println("Action: \n" + temp);
+        for (int i = 0; i < len; i++) {
+            cv = new ComplexVector();
+            for (int j = 0; j < len; j++) {
+                if (i == j) {
+                    cn = avg;
+                } else {
+                    cn = new ComplexNumber(0, 0);
+                }
+                cv.addComplexNumber(cn);
+            }
+            res.addComplexEntry(cv);
+        }
+        
+        return res;
+    }
+    
+    public static ComplexNumber observableAverage(ComplexVector ket, ComplexMatrix observable) throws Exception {
+        ComplexVector temp = ComplexOperation.action(observable, ket);
         
         ComplexVector bra = ComplexOperation.complexVectorConjugation(temp);
         
         ComplexNumber res = ComplexOperation.innerProduct(bra, ket);
-//        System.err.println("Bra:\n" + bra);
-//        System.err.println("ket:\n" + ket);
-//        System.err.println("After Inner product:" + res);
+        
+        return res;
+    }
+    
+    public static ComplexNumber observableVariance(ComplexVector ket, ComplexMatrix observable) throws Exception {
+        ComplexNumber avg = Observable.observableAverage(ket, observable);
+        ComplexMatrix identity = Observable.buildIdentity(avg, observable.getMatrix().size());
+        
+        ComplexMatrix mu = ComplexOperation.complexMatrixRest(observable, identity);
+        
+        ComplexMatrix mu2 = ComplexOperation.complexMatrixMultiplication(mu, mu);
+
+        ComplexVector temp = ComplexOperation.action(mu2, ket);
+        
+        ComplexNumber res = ComplexOperation.innerProduct(ComplexOperation.complexVectorConjugation(ket), temp);
         
         return res;
     }

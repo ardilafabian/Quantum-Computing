@@ -150,6 +150,26 @@ public class ComplexOperation {
         return cvResult;
 
     }
+            
+    public static ComplexVector complexVectorRest(ComplexVector cv1, ComplexVector cv2) {
+
+        ComplexVector cvResult = new ComplexVector();
+        ComplexNumber cn1;
+        ComplexNumber cn2;
+
+        if (cv1.getVector().size() != cv2.getVector().size()) {
+            System.err.println("It's not possible to sum vector with different leght.");
+        } else {
+            for (int i = 0; i < cv1.getVector().size(); i++) {
+                cn1 = cv1.getVector().get(i);
+                cn2 = cv2.getVector().get(i);
+                cvResult.addComplexNumber(ComplexOperation.complexNumberRest(cn1, cn2));
+            }
+        }
+
+        return cvResult;
+
+    }
 
     public static ComplexVector complexVectorByScalar(ComplexVector cv, ComplexNumber scalar) {
 
@@ -196,6 +216,25 @@ public class ComplexOperation {
             for (int i = 0; i < cmx1.getMatrix().size(); i++) {
                 cmxResult.addComplexEntry(
                         ComplexOperation.complexVectorSum(cmx1.getMatrix().get(i), cmx2.getMatrix().get(i)));
+            }
+
+        }
+
+        return cmxResult;
+
+    }
+    
+    public static ComplexMatrix complexMatrixRest(ComplexMatrix cmx1, ComplexMatrix cmx2) {
+
+        ComplexMatrix cmxResult = new ComplexMatrix();
+
+        if (cmx1.getMatrix().size() != cmx2.getMatrix().size()) {
+            System.err.println("It's not possible to sum vector with different leght.");
+        } else {
+
+            for (int i = 0; i < cmx1.getMatrix().size(); i++) {
+                cmxResult.addComplexEntry(
+                        ComplexOperation.complexVectorRest(cmx1.getMatrix().get(i), cmx2.getMatrix().get(i)));
             }
 
         }
