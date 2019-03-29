@@ -36,20 +36,28 @@ public class SlitExperimentTest {
         int slist = 2;
         int targets = 6;
         
-        ArrayList<Double> vector = new ArrayList<>();
-        vector.add(1.0);
-        vector.add(0.0);
-        vector.add(0.0);
-        vector.add(0.0);
-        vector.add(0.0);
-        vector.add(0.0);
-        vector.add(0.0);
-        vector.add(0.0);
+        ArrayList<Double> vectorState = new ArrayList<>();
+        vectorState.add(1.0);
+        vectorState.add(0.0);
+        vectorState.add(0.0);
+        vectorState.add(0.0);
+        vectorState.add(0.0);
+        vectorState.add(0.0);
+        vectorState.add(0.0);
+        vectorState.add(0.0);
         
-        ArrayList<Object> results = SlitExperiment.multipleClassicProbabilisticSlits(slist, targets, probs, vector);
+        ArrayList<Object> results = SlitExperiment.multipleClassicProbabilisticSlits(slist, targets, probs, vectorState);
         
-        ArrayList<ArrayList<Double>> m = (ArrayList<ArrayList<Double>>) results.get(0);
+        ArrayList<Double> expected = new ArrayList<>();
+        expected.add(0.0);
+        expected.add(0.0);
+        expected.add(0.0);
+        expected.add(0.16665);
+        expected.add(0.16665);
+        expected.add(0.3333);
+        expected.add(0.16665);
+        expected.add(0.16665);
         
-        System.err.println("\nVector: " + results.get(1));
+        assertEquals("multipleClassicProbabilisticSlitsTest failed.", true , results.get(1).equals(expected));
     }
 }
