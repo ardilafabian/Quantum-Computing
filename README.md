@@ -24,7 +24,7 @@ Product Version: NetBeans IDE 8.2 (Build 201609300101)
 ## Running the tests
 
 You will have a structure of test file that looks like this:
-![TestStructureImage]()
+![TestStructureImage](structureFiles.PNG)
 
 ### Break down into end to end tests
 
