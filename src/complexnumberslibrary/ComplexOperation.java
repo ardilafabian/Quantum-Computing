@@ -92,6 +92,19 @@ public class ComplexOperation {
         return new ComplexNumber(rp, ip * -1);
 
     }
+    
+    public static ComplexVector complexVectorConjugation(ComplexVector cv) {
+        int len = cv.getVector().size();
+        
+        ComplexNumber temp;
+        for (int i = 0; i < len; i++) {
+            temp = cv.getVector().get(i);
+            temp = ComplexOperation.complexNumberConjugation(temp);
+            cv.getVector().set(i, temp);
+        }
+        
+        return cv;
+    }
 
     public static ComplexNumber complexNumberPolarToCartesianRepresentation(double rho, double theta) {
 
@@ -266,6 +279,7 @@ public class ComplexOperation {
         } else {
             for (int i = 0; i < cv1.getVector().size(); i++) {
                 ComplexOperation.complexNumberSum(result, ComplexOperation.complexNumberMultiplication(cv1.getVector().get(i), cv2.getVector().get(i)));
+                //System.err.println("Suuum: " + result);
             }
         }
 

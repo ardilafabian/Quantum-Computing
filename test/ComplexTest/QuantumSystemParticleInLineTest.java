@@ -35,4 +35,22 @@ public class QuantumSystemParticleInLineTest {
         
         assertEquals("particleLikelihoodAtPointTest failed.", true, 0.0526 == res);
     }
+    
+    @Test
+    public void amplitudeOfTransitionTest() {
+        ComplexVector cv1 = new ComplexVector();
+        ComplexVector cv2 = new ComplexVector();
+        
+        cv1.addComplexNumber(new ComplexNumber(0.7071, 0));
+        cv1.addComplexNumber(new ComplexNumber(0, 0.7071));
+        
+        cv2.addComplexNumber(new ComplexNumber(0, 0.7071));
+        cv2.addComplexNumber(new ComplexNumber(-0.7071, 0));
+        
+        ComplexNumber res = QuantumSystemParticleInLine.amplitudeOfTransition(cv1, cv2);
+        
+        System.err.println(res);
+        
+        assertEquals("amplitudeOfTransitionTest failed.", true, res.equals(new ComplexNumber(0, 0)));
+    }
 }

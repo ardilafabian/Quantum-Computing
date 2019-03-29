@@ -21,12 +21,18 @@ public class QuantumSystemParticleInLine {
     }
     
     public static ComplexNumber amplitudeOfTransition(ComplexVector v1, ComplexVector v2) {
-        ComplexNumber innerProduct = ComplexOperation.innerProduct(v1, v2);
+        ComplexNumber innerProduct = ComplexOperation.innerProduct(v1, ComplexOperation.complexVectorConjugation(v2));
+        
+        System.err.println("Inner producto" + innerProduct);
         
         double normVector1 = ComplexOperation.complexVectorNorm(v1);
+        System.err.println("Norm vector 1" + normVector1);
         double normVector2 = ComplexOperation.complexVectorNorm(v2);
+        System.err.println("Norm vector 2" + normVector2);
         
         double divider = normVector1*normVector2;
+        
+        System.err.println("Divider" + divider);
         
         return new ComplexNumber(innerProduct.getRealPart()/divider, innerProduct.getImaginaryPart()/divider);
     }
