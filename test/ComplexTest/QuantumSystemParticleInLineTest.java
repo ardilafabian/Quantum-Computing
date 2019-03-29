@@ -41,16 +41,16 @@ public class QuantumSystemParticleInLineTest {
         ComplexVector cv1 = new ComplexVector();
         ComplexVector cv2 = new ComplexVector();
         
-        cv1.addComplexNumber(new ComplexNumber(0.7071, 0));
-        cv1.addComplexNumber(new ComplexNumber(0, 0.7071));
+        cv1.addComplexNumber(new ComplexNumber(1, 0));
+        cv1.addComplexNumber(new ComplexNumber(0, -1));
         
-        cv2.addComplexNumber(new ComplexNumber(0, 0.7071));
-        cv2.addComplexNumber(new ComplexNumber(-0.7071, 0));
+        cv2.addComplexNumber(new ComplexNumber(0, 1));
+        cv2.addComplexNumber(new ComplexNumber(1, 0));
         
         ComplexNumber res = QuantumSystemParticleInLine.amplitudeOfTransition(cv1, cv2);
         
-        System.err.println(res);
+        //System.err.println("aaaaa ->"+res);
         
-        assertEquals("amplitudeOfTransitionTest failed.", true, res.equals(new ComplexNumber(0, 0)));
+        assertEquals("amplitudeOfTransitionTest failed.", true, res.equals(new ComplexNumber(0, -1)));
     }
 }
