@@ -34,49 +34,34 @@ public class Main {
         ComplexMatrix cmx2;
         
         /*-------------------------------------------------------------------------*/
-        /*
+        
         cmx1 = new ComplexMatrix();
         cmx2 = new ComplexMatrix();
         
         cv1 = new ComplexVector();
-        cv1.addComplexNumber(new ComplexNumber(3, 2));
-        cv1.addComplexNumber(new ComplexNumber(0, 0));
-        cv1.addComplexNumber(new ComplexNumber(5, -6));
-        cmx1.addComplexEntry(cv1);
-        
-        cv1 = new ComplexVector();
         cv1.addComplexNumber(new ComplexNumber(1, 0));
-        cv1.addComplexNumber(new ComplexNumber(4, 2));
-        cv1.addComplexNumber(new ComplexNumber(0, 1));
+        cv1.addComplexNumber(new ComplexNumber(-1, -1));
         cmx1.addComplexEntry(cv1);
         
         cv1 = new ComplexVector();
-        cv1.addComplexNumber(new ComplexNumber(4, -1));
+        cv1.addComplexNumber(new ComplexNumber(-1, 1));
+        cv1.addComplexNumber(new ComplexNumber(1, 0));
+        cmx1.addComplexEntry(cv1);
+        
+        cv1 = new ComplexVector();
         cv1.addComplexNumber(new ComplexNumber(0, 0));
-        cv1.addComplexNumber(new ComplexNumber(4, 0));
-        cmx1.addComplexEntry(cv1);
-        
-        cv1 = new ComplexVector();
-        cv1.addComplexNumber(new ComplexNumber(5, 0));
-        cv1.addComplexNumber(new ComplexNumber(2, -1));
-        cv1.addComplexNumber(new ComplexNumber(6, -4));
+        cv1.addComplexNumber(new ComplexNumber(-1, 0));
         cmx2.addComplexEntry(cv1);
         
         cv1 = new ComplexVector();
-        cv1.addComplexNumber(new ComplexNumber(0, 0));
-        cv1.addComplexNumber(new ComplexNumber(4, 5));
+        cv1.addComplexNumber(new ComplexNumber(-1, 0));
         cv1.addComplexNumber(new ComplexNumber(2, 0));
-        cmx2.addComplexEntry(cv1);
-        
-        cv1 = new ComplexVector();
-        cv1.addComplexNumber(new ComplexNumber(7, -4));
-        cv1.addComplexNumber(new ComplexNumber(2, 7));
-        cv1.addComplexNumber(new ComplexNumber(0, 0));
         cmx2.addComplexEntry(cv1);
         
         System.out.println("--- Test Case 8: ---\n     A  = \n" + cmx1 + "\n     B = \n" + cmx2 + "\n\n");
         
-        System.out.println("Matrix Multiplication: A x B ->\n" +op.complexMatrixMultiplication(cmx1, cmx2) + "\n\n");  */
+        System.out.println("Matrix Multiplication: A x B ->\n" +op.complexMatrixMultiplication(cmx1, cmx2) + "\n\n");  
+        System.out.println("Matrix Multiplication: B x A ->\n" +op.complexMatrixMultiplication(cmx2, cmx1) + "\n\n");  
         
         cmx1 = new ComplexMatrix();
         

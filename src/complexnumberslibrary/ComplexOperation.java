@@ -39,10 +39,26 @@ public class ComplexOperation {
         double rp2 = cn2.getRealPart();
         double ip2 = cn2.getImaginaryPart();
 
-        double resultRp = (rp1 * rp2) - (ip1 * ip2);
-        double resultIp = (rp1 * ip2) + (rp2 * ip1);
+        double resultRp = 0;
+        double resultIp = 0;
+        if (rp1 != 0 && rp2!=0 && ip1!=0 && ip2!=0) {
+            resultRp = (rp1 * rp2) - (ip1 * ip2);
+            resultIp = (rp1 * ip2) + (rp2 * ip1);
+        } else if (rp1==0 && rp2==0 && ip1!=0 && ip2!=0) {
+            resultRp = -1 * ip1 * ip2;
+        } else if (rp1!=0 && rp2!=0 && ip1==0 && ip2==0) {
+            resultRp = rp1 * rp2;
+        } else if (rp1!=0 && rp2==0 && ip1==0 && ip2!=0) {
+            resultIp = rp1 * ip2;
+        } else if (rp1==0 && rp2!=0 && ip1!=0 && ip2==0) {
+            resultIp = rp2 * ip1;
+        }
+        
+        ComplexNumber res = new ComplexNumber(resultRp, resultIp);
+        
+        //System.out.println("Mult: "+cn1+" x " + cn2 + " = " + res);
 
-        return new ComplexNumber(resultRp, resultIp);
+        return res;
 
     }
 
@@ -278,7 +294,8 @@ public class ComplexOperation {
             System.err.println("Vectors length are not equal, it is not possible to gte Inner Product.");
         } else {
             for (int i = 0; i < cv1.getVector().size(); i++) {
-                ComplexOperation.complexNumberSum(result, ComplexOperation.complexNumberMultiplication(cv1.getVector().get(i), cv2.getVector().get(i)));
+                ComplexNumber resultMultiplication = ComplexOperation.complexNumberMultiplication(cv1.getVector().get(i), cv2.getVector().get(i));
+                result = ComplexOperation.complexNumberSum(result, resultMultiplication);
                 //System.err.println("Suuum: " + result);
             }
         }
