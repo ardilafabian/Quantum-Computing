@@ -19,9 +19,9 @@ public class MarblesExperiment {
     static int clicks;
     
     public MarblesExperiment(ComplexMatrix adjacencyMatrix, ComplexVector currentSate, int clicks) {
-        this.adjacencyMatrix = adjacencyMatrix;
-        this.currentState = currentSate;
-        this.clicks = clicks;
+        MarblesExperiment.adjacencyMatrix = adjacencyMatrix;
+        MarblesExperiment.currentState = currentSate;
+        MarblesExperiment.clicks = clicks;
     }
     
     public static ComplexVector getNewState() throws Exception {
