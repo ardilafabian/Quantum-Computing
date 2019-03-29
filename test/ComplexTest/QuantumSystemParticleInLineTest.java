@@ -5,6 +5,7 @@
  */
 package ComplexTest;
 
+import complexnumberslibrary.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -21,8 +22,17 @@ public class QuantumSystemParticleInLineTest {
     public static void setUpClass() {
     }
 
-
     @Test
     public void particleLikelihoodAtPointTest() {
+        ComplexVector cv = new ComplexVector();
+        
+        cv.addComplexNumber(new ComplexNumber(-3, -1));
+        cv.addComplexNumber(new ComplexNumber(0, -2));
+        cv.addComplexNumber(new ComplexNumber(0, 1));
+        cv.addComplexNumber(new ComplexNumber(2, 0));
+        
+        double res = QuantumSystemParticleInLine.particleLikelihoodAtPoint(cv, 2);
+        
+        assertEquals("particleLikelihoodAtPointTest failed.", true, 0.0526 == res);
     }
 }

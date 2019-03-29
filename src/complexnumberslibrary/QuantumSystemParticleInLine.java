@@ -13,14 +13,14 @@ public class QuantumSystemParticleInLine {
     
     public QuantumSystemParticleInLine() {}
     
-    public double particleLikelihoodAtPoint(ComplexVector v, int pnt) {
+    public static double particleLikelihoodAtPoint(ComplexVector v, int pnt) {
         double norm = ComplexOperation.complexVectorNorm(v);
         double modulus = ComplexOperation.complexNumberModulus(v.getVector().get(pnt));
         
-        return Math.pow(modulus, 2) / Math.pow(norm, 2);
+        return (double)Math.round((Math.pow(modulus, 2) / Math.pow(norm, 2)) * 10000d) / 10000d;
     }
     
-    public ComplexNumber amplitudeOfTransition(ComplexVector v1, ComplexVector v2) {
+    public static ComplexNumber amplitudeOfTransition(ComplexVector v1, ComplexVector v2) {
         ComplexNumber innerProduct = ComplexOperation.innerProduct(v1, v2);
         
         double normVector1 = ComplexOperation.complexVectorNorm(v1);
