@@ -1,3 +1,6 @@
+
+![GitHub](https://img.shields.io/github/license/fardila1011/Quantum-Computing.svg)
+
 # Quantum Computing
 
 This project is built following the guide presented in the book [Quantum Computing for Computer Scientists](https://www.amazon.com/Quantum-Computing-Computer-Scientists-Yanofsky/dp/0521879965), the software is thouhgt as a library and you will find the necessary tools to simulate basic systems in the Quantum world (also you have some systems already simulated), the objective was to developed certain tools and we do not provide a UI or menu to use the tools, you have to follow classes specifications to be able to understand and use the software in this project.
