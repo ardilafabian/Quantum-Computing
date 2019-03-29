@@ -65,7 +65,7 @@ public class SlitExperiment {
         }
         
         ArrayList<ArrayList<Double>> matrix = new ArrayList();
-        int sizeM = 8;
+        int sizeM = targets+2;
         for (int i = 0; i < sizeM; i++) {
             ArrayList<Double> temp = new ArrayList();
             for (int j = 0; j < sizeM; j++) {
@@ -81,7 +81,6 @@ public class SlitExperiment {
         int currentSlit = 1;
         int currentCount = 0;
         for (int i = slits + 1; i < sizeM; i++) {
-            System.err.println("Index1: " + i);
             matrix.get(i).set(i, 1.0);
             if (currentCount < targets - 1) {
                 matrix.get(i).set(currentSlit, probs.get(i - (slits + 1)));
@@ -96,14 +95,13 @@ public class SlitExperiment {
                     matrix.get(i).set(currentSlit, probs.get(i - (slits + 1)));
                 }
             }
-            System.err.println("Index2: " + i);
         }
         
-        matrix.get(5).set(2, 0.3333);
-        matrix.get(6).set(2, 0.3333);
-        matrix.get(6).set(1, 0.0);
-        matrix.get(7).set(2, 0.3333);
-        matrix.get(7).set(1, 0.0);
+//        matrix.get(5).set(2, 0.3333);
+//        matrix.get(6).set(2, 0.3333);
+//        matrix.get(6).set(1, 0.0);
+//        matrix.get(7).set(2, 0.3333);
+//        matrix.get(7).set(1, 0.0);
         
         return matrix;
     }
@@ -114,10 +112,10 @@ public class SlitExperiment {
 
         matrix = doubleMatrixMult(matrix, matrix);
 
-        System.out.println("Matrix:");
-        for (int i = 0; i < matrix.size(); i++) {
-            System.out.println(matrix.get(i));
-        }
+//        System.out.println("Matrix:");
+//        for (int i = 0; i < matrix.size(); i++) {
+//            System.out.println(matrix.get(i));
+//        }
 
         ArrayList results = new ArrayList();
         results.add(matrix);
