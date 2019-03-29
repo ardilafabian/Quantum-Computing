@@ -30,21 +30,7 @@ You will have a structure of test file that looks like this:
 
 ![TestStructureImage](structureFiles.PNG)
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+The file *ComplexOpsTest.java* are the tests realted to all the tools offered, the other files are realted to systems presented in the [book](https://www.amazon.com/Quantum-Computing-Computer-Scientists-Yanofsky/dp/0521879965) refer there if you want know more about specific details.
 
 ## Authors
 
